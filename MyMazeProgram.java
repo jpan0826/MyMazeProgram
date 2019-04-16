@@ -25,7 +25,7 @@ public class MyMazeProgram {
                 int size = 5;
                 helper(size, -1, -1, size-1, false);
             } else if (option.equals("3")) {
-                System.out.printf("How big is the maze? (%d - %d)", Config.MIN_VALUE, Config.MAX_VALUE);
+                System.out.printf("How big is the maze? (%d - %d)\n", Config.MIN_VALUE, Config.MAX_VALUE);
                 int size = myScanner.nextInt();
                 int obstacleRow = RNG.nextInt(size-2) + 1;
                 int obstacleColumn = RNG.nextInt(size);
@@ -70,26 +70,26 @@ public class MyMazeProgram {
             System.out.println(subMenu);
             System.out.print("Move? ");
             String choice = myScanner.next();
-            if (choice.equals("1") && robotI > 0) {
-                if (robotI - 1 != obstacleRow || robotJ != obstacleColumn) {
+            if (choice.equals("1")) {
+                if ((robotI - 1 != obstacleRow || robotJ != obstacleColumn) && robotI > 0) {
                     robotI --;
                 }
                 count ++;
             }
-            else if (choice.equals("2") && robotI < size-1) {
-                if (robotI + 1 != obstacleRow || robotJ != obstacleColumn) {
+            else if (choice.equals("2")) {
+                if ((robotI + 1 != obstacleRow || robotJ != obstacleColumn) && robotI < size-1) {
                     robotI ++;
                 }
                 count ++;
             }
-            else if (choice.equals("3") && robotJ > 0) {
-                if (robotI  != obstacleRow || robotJ - 1 != obstacleColumn) {
+            else if (choice.equals("3")) {
+                if ((robotI  != obstacleRow || robotJ - 1 != obstacleColumn) && robotJ > 0) {
                     robotJ --;
                 }
                 count ++;
             }
-            else if (choice.equals("4") && robotJ < size-1) {
-                if (robotI  != obstacleRow || robotJ + 1 != obstacleColumn) {
+            else if (choice.equals("4")) {
+                if ((robotI  != obstacleRow || robotJ + 1 != obstacleColumn) && robotJ < size-1) {
                     robotJ ++;
                 }
                 count ++;
